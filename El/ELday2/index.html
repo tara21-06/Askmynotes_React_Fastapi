@@ -1,0 +1,407 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM getElementById Demo</title>
+
+<style>
+body{
+    font-family: Arial,sans-serif;
+    background:#f4f6f9;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+#main-heading{
+    color:#2980b9;
+    border:2px dashed #2980b9;
+    padding:10px;
+    text-align:center;
+}
+
+button{
+    padding:10px 15px;
+    background:#3b82f6;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+#output{
+    margin-top:20px;
+    background:#1e1e1e;
+    color:#00ff66;
+    padding:15px;
+    border-radius:8px;
+    white-space:pre-line;
+    font-family:Consolas, monospace;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2 id="main-heading">DOM Methods Demonstration</h2>
+
+<button onclick="demoGetElementById()">
+    getElementById()
+</button>
+
+<h3>Output:</h3>
+
+<div id="output">
+Click the button to see the result here.
+</div>
+
+</div>
+
+<script>
+
+function showOutput(message){
+    document.getElementById("output").innerText = message;
+}
+
+function demoGetElementById(){
+
+    let heading = document.getElementById("main-heading");
+
+    heading.style.backgroundColor = "#d1ecf1";
+    heading.style.color = "#0c5460";
+    heading.innerText = "Selected using getElementById()";
+
+    showOutput(
+        "Method: getElementById()\n\n" +
+        "It selects one element using its id.\n\n" +
+        "Selected element id: " + heading.id
+    );
+}
+
+</script>
+
+</body>
+</html> -->
+<!--<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    #main-heading {
+      color: #2980b9;
+      padding: 10px;
+      border: 2px dashed #2980b9;
+      text-align: center;
+    }
+
+    button {
+      margin: 8px 5px;
+      padding: 10px 14px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #217dbb;
+    }
+
+    #output {
+      background-color: #1e1e1e;
+      color: #00ff90;
+      padding: 15px;
+      min-height: 80px;
+      border-radius: 8px;
+      margin-top: 20px;
+      white-space: pre-line;
+      font-family: Consolas, monospace;
+    }
+  </style>
+    </head>
+    <body>
+        <header>
+            <h1 id="main-heading">My Website</h1>
+        </header>
+        
+        <div class="container">
+            <h3>Welcome to My Personal Page</h3>
+        </div>
+
+        <div class="container">
+            <button id="button" onclick="demogetElementById()">getElementById()</button>
+            <h3>Output:</h3>
+            <div id="output">Click the button to get my messsage here.</div>
+        </div>
+    
+        <script>
+            
+            function ShowOutput(message) {
+                document.getElementById("output").innerText = message;
+            }
+
+            function demogetElementById() {
+                var heading = document.getElementById("main-heading");
+                heading.style.color = "#bb1795"; 
+                heading.style.fontSize = "24px";
+                heading.style.backgroundColor = "yellow";
+
+                ShowOutput(
+                    "This button here is used to demonstarte the getElementById() method."+
+                    "\n\nIt selects the element with the ID 'main-heading'"
+                );
+            }
+        
+        </script>
+    
+    </body>
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice</title> 
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .student-card {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 5px solid #95a5a6;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            border-left: 5px solid #f39c12;
+        }
+
+        .course {
+            padding: 8px;
+            margin: 6px 0;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .important {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        #main-heading {
+            color: #2980b9;
+            padding: 10px;
+            border: 2px dashed #2980b9;
+            text-align: center;
+        }
+
+        button {
+            margin: 8px 5px;
+            padding: 10px 14px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #217dbb;
+        }
+
+        #output {
+            background-color: #1e1e1e;
+            color: #00ff90;
+            padding: 15px;
+            min-height: 80px;
+            border-radius: 8px;
+            margin-top: 20px;
+            white-space: pre-line;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="main-heading">JavaScript Functions Practice</h1>
+</header>
+
+<div class="container">
+    <h3>Student Logs</h3>
+
+    <div class="student-card">
+        <h4>Preeti</h4>
+        <p>Name: Preeti <br> Course: CSM <br> Year: 4th Year</p>
+    </div>
+
+    <div class="student-card">
+        <h4>Rahul</h4>
+        <p>Name: Rahul <br> Course: CSM <br> Year: 3rd Year</p>
+    </div>
+
+    <div class="student-card">
+        <h4>Anjali</h4>
+        <p>Name: Anjali <br> Course: CSM <br> Year: 2nd Year</p>
+    </div>
+</div>
+
+<div class="container">
+    <h3>Course Details</h3>
+
+    <div class="course">
+        <h5>
+            CSM is an advanced undergraduate engineering program that combines
+            Computer Science Engineering with Artificial Intelligence and
+            Machine Learning technologies.
+        </h5>
+    </div>
+</div>
+
+<div class="container">
+
+    <button onclick="demogetElementById()">getElementById()</button>
+
+    <button onclick="demogetElementsByClassName()">
+        getElementsByClassName()
+    </button>
+
+    <button onclick="demogetElementsByTagName()">
+        getElementsByTagName()
+    </button>
+
+    <h3>Output:</h3>
+
+    <div id="output">
+        Click any button to see the output.
+    </div>
+
+</div>
+
+<script>
+
+function ShowOutput(message){
+    document.getElementById("output").innerText = message;
+}
+
+function demogetElementById(){
+
+    var heading = document.getElementById("main-heading");
+
+    heading.style.color = "#bb1795";
+    heading.style.backgroundColor = "yellow";
+    heading.style.fontSize = "30px";
+
+    ShowOutput(
+        "getElementById() selected the element having id 'main-heading'."
+    );
+}
+
+function demogetElementsByClassName(){
+
+    var students = document.getElementsByClassName("student-card");
+
+    for(var i=0;i<students.length;i++){
+        students[i].classList.add("highlight");
+    }
+
+    ShowOutput(
+        "getElementsByClassName() selected all elements having class 'student-card'."
+    );
+}
+
+function demogetElementsByTagName(){
+
+    var course = document.getElementsByTagName("h5");
+
+    for(var i=0;i<course.length;i++){
+        course[i].classList.add("important");
+    }
+
+    ShowOutput(
+        "getElementsByTagName() selected all elements having tag name 'h5'."
+    );
+}
+
+</script>
+
+</body>
+</html>

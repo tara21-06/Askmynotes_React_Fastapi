@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .student-card {
+      background-color: #ecf0f1;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border-left: 5px solid #95a5a6;
+    }
+
+    .highlight {
+      background-color: #fff3cd;
+      border-left: 5px solid #f39c12;
+    }
+
+    .course {
+      padding: 8px;
+      margin: 6px 0;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+     .important {
+      color: #c0392b;
+      font-weight: bold;
+    }
+
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    #main-heading {
+      color: #2980b9;
+      padding: 10px;
+      border: 2px dashed #2980b9;
+      text-align: center;
+    }
+
+    button {
+      margin: 8px 5px;
+      padding: 10px 14px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #217dbb;
+    }
+
+    .reset-btn {
+      background-color: #e74c3c;
+    }
+
+    .reset-btn:hover {
+      background-color: #c0392b;
+    }
+
+    #output {
+      background-color: #1e1e1e;
+      color: #00ff90;
+      padding: 15px;
+      min-height: 80px;
+      border-radius: 8px;
+      margin-top: 20px;
+      white-space: pre-line;
+      font-family: Consolas, monospace;
+    }
+
+  </style>
+
+    </head>
+    <body>
+        <header>
+            <h1 id="main-heading">Javascript Functions Practice</h1>
+        </header>
+        
+        <div class="container">
+            <h3>Student Logs</h3>
+
+            <div class="student-card" >
+              <h4>Preeti</h4>
+              <p>Name: Preeti <br> Course: CSM <br> Year: 4th Year</p>
+            </div>
+
+            <div class="student-card" >
+              <h4>Preeti</h4>
+              <p>Name: Preeti <br> Course: CSM <br> Year: 4th Year</p>
+            </div>
+
+            <div class="student-card" >
+              <h4>Preeti</h4>
+              <p>Name: Preeti <br> Course: CSM <br> Year: 4th Year</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>Course Details</h3>
+
+            <div class="course">
+              <h5>CSM is an advanced and specialized undergraduate engineering program that combines the 
+              fundamentals of Computer Science Engineering (CSE) with cutting-edge domains like Artificial Intelligence (AI) and Machine Learning (ML).
+               This course is offered in several top engineering institutes in India including IITs, NITs, IIITs, and private universities.</h5>
+            </div>
+
+        </div>
+
+        <div class="container" style="margin: auto">
+            <button id="button1" onclick="demogetElementById()">getElementById()</button>
+            <button id="button2" onclick="demogetElementsByClassName()">getElementsByClassName()</button>
+            <button id="button3" onclick="demogetElementsByTagName()">getElementsByTagName()</button>
+            <button id="button4" onclick="demoquerySelector()">querySelector()</button>
+            <button id="button5" onclick="demoquerySelectorAll()">querySelectorAll()</button>
+            <button id="button5" class="reset-btn" onclick="reset()">reset()</button>
+            <h3>Output:</h3>
+            <div id="output">Click the button to get my message here.</div>
+        </div>
+    
+        <script>
+            
+            function ShowOutput(message) {
+                document.getElementById("output").innerText = message;
+            }
+
+            function demogetElementById() {
+                var heading = document.getElementById("main-heading");
+                heading.style.color = "#bb1795"; 
+                heading.style.fontSize = "24px";
+                heading.style.backgroundColor = "yellow";
+
+                ShowOutput(
+                    "This button here is used to demonstrate the getElementById() method."+
+                    "\n\nIt selects the element with the ID 'main-heading'"
+                );
+            }
+
+            function demogetElementsByClassName() {
+                var student = document.getElementsByClassName('student-card');
+                for (var i = student.length - 1; i >= 0; i--) {
+                  student[i].classList.add("highlight");
+              }
+  
+                ShowOutput(
+                    "This button here is used to demonstrate the getElementsByClassName() method."+
+                    "\n\nIt selects the element with the Class 'student-card'"
+                );
+            }
+
+            function demogetElementsByTagName() {
+                var course = document.getElementsByTagName("h5");
+                for (var i = course.length - 1; i >= 0; i--) {
+                  course[i].classList.add("important");
+              }
+
+                ShowOutput(
+                    "This button here is used to demonstrate the getElementsByTagName() method."+
+                    "\n\nIt selects the element with the Tag name 'h5'"
+                );
+            }
+
+            function demoquerySelector() {
+              var color = document.querySelector(".#2c3e50");
+                color.style.color = "#bb1795"; 
+                color.style.fontSize = "24px";
+                color.style.backgroundColor = "yellow";
+
+                ShowOutput(
+                    "This button here is used to demonstrate the querySelector() method."+
+                    "\n\nIt selects the element with the color '#2c3e50'"
+                );
+            }
+
+            function demoquerySelectorAll() {
+              var colors = document.querySelectorAll(".#2c3e50");
+                colors.style.color = "#bb1795"; 
+                colors.style.fontSize = "24px";
+                colors.style.backgroundColor = "yellow";
+
+                ShowOutput(
+                    "This button here is used to demonstrate the querySelectorAll() method."+
+                    "\n\nIt selects all the elemenst with the color '#2c3e50'"
+                );
+            }
+        
+        </script>
+    
+    </body>
+
+</html>
